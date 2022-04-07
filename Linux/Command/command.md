@@ -1,20 +1,9 @@
+## cat	
+Outputting the Contents of a File (cat)
 
 
-
-
-
-
-
-
-
-
-## whoami	
-Find out what user we're currently logged in as!
-```
-tryhackme@linux1:~$ whoami
-tryhackme
-```
-
+## cp
+copy	Copy a file or folder   
 
 
 ## echo	
@@ -33,30 +22,35 @@ $ echo '"Hello world"'
 "Hello world"
 ```
 
-## ls 
-Listing Files in Our Current Directory (ls)
+## file	
+file	Determine the type of a file   
 ```
-root@ip-10-10-250-80:~# ls
-Desktop    Instructions  Postman  Scripts            Tools
-Downloads  Pictures      Rooms    thinclient_drives
-
-
-ls -R : 모든 하위 디렉토리 정보 
-ls -R /디렉토리경로: /디렉토리경로부터 하위 디렉토리 정보 
-
+tryhackme@linux2:~$ file note
+note: ASCII text
 ```
+## mkdir
+make directory	Create a folder   
 
-
-
-## cat	
-Outputting the Contents of a File (cat)
+## mv
+move	Move a file or folder     
 
 ## pwd
 Finding out the full Path to our Current Working Directory (pwd)
 
 
----
+## touch	
+touch	Create file   
 
-[TryHackMe - Module Linux Fundamentals Part 1](https://tryhackme.com/)
+
+## whoami	
+Find out what user we're currently logged in as!
+```
+tryhackme@linux1:~$ whoami
+tryhackme
+```
+
+---
+참고 자료   
+[TryHackMe - Linux Fundamentals](https://tryhackme.com/module/linux-fundamentals)
 
 
