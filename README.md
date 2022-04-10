@@ -1,5 +1,5 @@
 
-## [<> Code](https://github.com/kimbbang/publicTIL)
+## <> Code
 
 * [Linux](https://github.com/kimbbang/publicTIL/blob/main/Linux)    
 * [Network](https://github.com/kimbbang/publicTIL/tree/main/Network)   
@@ -7,14 +7,14 @@
 * [Syntax](https://github.com/kimbbang/publicTIL/tree/main/Syntax) : Python, Kotlin, Shell, Java    
 * [Windows](https://github.com/kimbbang/publicTIL/tree/main/Windows)    
 
-* [programming assignment](https://github.com/kimbbang/publicTIL/tree/main/programming%20assignment) 
+* programming assignment
   * [GeeksforGeeks Practice](https://github.com/kimbbang/publicTIL/tree/main/programming%20assignment/GeeksforGeeks_Practice)
   * JetBrainsAcademy Kotlin
 <br/>
 
 ## [Wiki](https://github.com/kimbbang/publicTIL/wiki)
 
-* Data Structures   
+* GeeksforGeeks - Data Structures   
 * JetBrains Academy - Kotlin   
 
 <br/>
