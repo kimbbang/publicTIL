@@ -1,10 +1,9 @@
-# TIL
 
 ## [<> Code](https://github.com/kimbbang/publicTIL)
 
-* [Linux](https://github.com/kimbbang/publicTIL/blob/main/Linux/README.md)    
+* [Linux](https://github.com/kimbbang/publicTIL/blob/main/Linux)    
 * [Network](https://github.com/kimbbang/publicTIL/tree/main/Network)   
-* [Splunk](https://github.com/kimbbang/publicTIL/blob/main/Splunk/README.md)    
+* [Splunk](https://github.com/kimbbang/publicTIL/blob/main/Splunk)    
 * [Syntax](https://github.com/kimbbang/publicTIL/tree/main/Syntax) : Python, Kotlin, Shell, Java    
 * [Windows](https://github.com/kimbbang/publicTIL/tree/main/Windows)    
 
@@ -20,7 +19,7 @@
 
 <br/>
 
-## Learning progress (my profile)
+## Learning progress (profile)
 
 * [GeeksforGeeks](https://auth.geeksforgeeks.org/user/kentucky861231)
 * [JetBrains Academy](https://hyperskill.org/profile/233833697)
