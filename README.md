@@ -18,3 +18,10 @@
 * Data Structures   
 * JetBrains Academy - Kotlin   
 
+<br/>
+
+## Learning progress (my profile)
+
+* [GeeksforGeeks](https://auth.geeksforgeeks.org/user/kentucky861231)
+* [JetBrains Academy](https://hyperskill.org/profile/233833697)
+* [TryHackMe](https://tryhackme.com/p/kimbbang)
