@@ -1,8 +1,9 @@
 """
+2022/04/09 solved
+
+Practice Problem :
 Finding middle element in a linked list
 https://practice.geeksforgeeks.org/problems/finding-middle-element-in-a-linked-list/1
-
-2022/04/09
 """
 # your task is to complete this function
 
@@ -12,7 +13,6 @@ class node:
         self.data = data
         self.next = None
 '''
-
 
 class Solution:
     #  Should return data of middle node. If linked list is empty, then  -1
@@ -31,6 +31,27 @@ class Solution:
         tempList.append(tmp.data)
 
         return tempList[len(tempList) // 2]
+
+################### Better solution #########################################
+"""
+    def printMiddle(self):
+        # Initialize two pointers, one will go one step a time (slow), another two at a time (fast)
+        slow = self.head
+        fast = self.head
+ 
+        # Iterate till fast's next is null (fast reaches end)
+        while fast and fast.next:
+            slow = slow.next
+            fast = fast.next.next
+         
+        # return the slow's data, which would be the middle element.
+        print("The middle element is ", slow.data)
+
+Better solution :
+Find the middle of a given linked list
+https://www.geeksforgeeks.org/write-a-c-function-to-print-the-middle-of-the-linked-list/
+"""
+################### Better solution #########################################
 
 
 # {

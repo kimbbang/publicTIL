@@ -1,8 +1,9 @@
 """
+2022/04/09 solved
+
+Practice Problem :
 Nth node from end of linked list
 https://practice.geeksforgeeks.org/problems/nth-node-from-end-of-linked-list/1
-
-2022/04/09
 """
 # User function Template for python3
 '''
@@ -20,8 +21,6 @@ https://practice.geeksforgeeks.org/problems/nth-node-from-end-of-linked-list/1
                 self.next = None
     }
 '''
-
-
 # Function to find the data of nth node from the end of a linked list
 def getNthFromLast(head, n):
     # code here
@@ -39,6 +38,38 @@ def getNthFromLast(head, n):
         tmp = tmp.next
 
     return tmp.data
+
+
+################### Better solution #########################################
+"""
+def getNthFromLast(head,n):
+    # Getting count of linked list
+    data = []
+    count = 0
+    itr = head
+    while itr:                               # One Loop enough !
+        count += 1
+        data.append(itr.data)
+        itr = itr.next
+       
+    # Returning the Nth node        
+    try:
+        if n > count:
+            return -1
+        if data[count - n]:
+            return data[count-n]
+        else:
+            return -1
+    except IndexError:
+        return -1
+    else:
+        return -1
+
+Better solution :
+Program for n’th node from the end of a Linked List
+https://www.geeksforgeeks.org/nth-node-from-the-end-of-a-linked-list/
+"""
+################### Better solution #########################################
 
 
 # {
