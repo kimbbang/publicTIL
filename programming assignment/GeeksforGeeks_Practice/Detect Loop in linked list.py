@@ -1,0 +1,101 @@
+"""
+2022/04/11 solved
+
+Practice Problem :
+Detect Loop in linked list
+https://practice.geeksforgeeks.org/problems/detect-loop-in-linked-list/1#
+"""
+#User function Template for python3
+'''
+        # Node Class
+        class Node:
+            def __init__(self, data):   # data -> value stored in node
+                self.data = data
+                self.next = None
+    
+'''
+class Solution:
+    #Function to check if the linked list has a loop.
+    def detectLoop(self, head):
+        #code here
+        temp_set = set()
+        tmp = head
+        while tmp :
+
+            if tmp in temp_set:
+          # if tmp.data in temp_set:  <- Wrong ! I Need to compare NODE ITSELF !!
+                return True
+
+            temp_set.add(tmp)
+          # temp_set.add(tmp.data) <- Wrong ! I Need to compare NODE ITSELF !!
+            tmp = tmp.next
+
+        return False
+
+################### Better solution #########################################
+"""
+    def detectLoop(self):
+        slow_p = self.head
+        fast_p = self.head
+        while(slow_p and fast_p and fast_p.next):
+            slow_p = slow_p.next
+            fast_p = fast_p.next.next        # Floyd’s Cycle-Finding Algorithm 
+            if slow_p == fast_p:
+                return 
+
+
+Better solution :
+Detect loop in a linked list
+https://www.geeksforgeeks.org/detect-loop-in-a-linked-list/
+"""
+################### Better solution #########################################
+
+
+#{
+#  Driver Code Starts
+#Initial Template for Python 3
+
+# Node Class
+class Node:
+    def __init__(self, data):   # data -> value stored in node
+        self.data = data
+        self.next = None
+
+# Linked List Class
+class LinkedList:
+    def __init__(self):
+        self.head = None
+        self.tail = None
+
+    # creates a new node with given value and appends it at the end of the linked list
+    def insert(self, val):
+        if self.head is None:
+            self.head = Node(val)
+            self.tail = self.head
+        else:
+            self.tail.next = Node(val)
+            self.tail = self.tail.next
+
+    #connects last node to node at position pos from begining.
+    def loopHere(self,pos):
+        if pos==0:
+            return
+
+        walk = self.head
+        for i in range(1,pos):
+            walk = walk.next
+
+        self.tail.next = walk
+
+if __name__ == '__main__':
+    for _ in range(int(input())):
+        n = int(input())
+
+        LL = LinkedList()
+        for i in input().split():
+            LL.insert(int(i))
+
+        LL.loopHere(int(input()))
+
+        print(Solution().detectLoop(LL.head))
+# } Driver Code Ends
