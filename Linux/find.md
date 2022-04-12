@@ -1,6 +1,3 @@
-
-
-
 ## find
 Using "find" to find a file with the name of "Reflections.java"
 ```
@@ -28,6 +25,7 @@ root@ip-10-10-223-7:~# find -name *password*
 
 ---
 
-[TryHackMe - Module Linux Fundamentals Part 1](https://tryhackme.com/)
+### References
+[TryHackMe - Linux Fundamentals](https://tryhackme.com/module/linux-fundamentals)
 
 
