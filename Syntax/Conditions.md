@@ -1,3 +1,8 @@
+# Conditions
+
+---
+
+
 # Python : if, elif, else 또는 if, else, if, else
 
 ### if, elif, else
@@ -21,6 +26,7 @@ print("A") if a > b else print("=") if a == b else print("B")
 
 [코드 출처](https://www.w3schools.com/python/python_conditions.asp)
 
+---
 
 # Kotlin : if, else if, else 또는 when
 
@@ -58,6 +64,8 @@ println(result)
 ```
 [코드 출처](https://www.w3schools.com/kotlin/kotlin_when.php)
 
+---
+
 # Shell : if, then, elif, then, else, fi
 
 ```
@@ -77,6 +85,8 @@ else
 fi
 ```
 [코드 출처](https://linuxize.com/post/bash-if-else-statement/)
+
+---
 
 # Java : if, else if, else 또는 ? 또는 switch
 
