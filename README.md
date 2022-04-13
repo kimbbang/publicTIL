@@ -21,6 +21,6 @@
 
 ## Learning progress (profile)
 
-* [GeeksforGeeks](https://auth.geeksforgeeks.org/user/kentucky861231)
+* [GeeksforGeeks](https://auth.geeksforgeeks.org/user/kimbbang)
 * [JetBrains Academy](https://hyperskill.org/profile/233833697)
 * [TryHackMe](https://tryhackme.com/p/kimbbang)
