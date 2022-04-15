@@ -46,6 +46,32 @@ def insertInMid(head, node):
 
     return head
 
+##################### ▼ Author's Solution ▼ #####################
+
+def insertInMid(head,new_node):
+    
+    #we take two pointers one of which moves to next node in each
+	#iteration and the other moves two nodes in one iteration.
+    slow = head
+    fast = head.next
+    
+    #when fast will reach end, slow will be at the middle point.
+    while fast and fast.next:
+        slow = slow.next
+        fast = fast.next.next
+        
+    #we store the next node after slow in link part of the new node.
+    new_node.next = slow.next
+    #we also store the new node in link part of the slow node.
+    slow.next = new_node
+
+
+################## ▼ geeks for geeks Solution ▼ ##################
+# Insert node into the middle of the linked list
+# https://www.geeksforgeeks.org/insert-node-middle-linked-list/
+
+
+
 # {
 #  Driver Code Starts
 # Initial Template for Python 3

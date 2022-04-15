@@ -35,9 +35,46 @@ def addNode(head, p, data):
 
     return head
 
+##################### ▼ Author's Solution ▼ #####################
 
-################### Better solution #########################################
-"""
+#Function to insert a new node at given position in doubly linked list.
+def addNode(head, p, data):
+
+    temp = head
+    
+    #using a pointer to traverse the linked list till position given.
+    while p!=0:
+        temp=temp.next
+        p-=1
+        
+    #creating and storing the new node with data in a pointer.
+    n = Node(data)
+    
+    #if the node next to node at given position is null, we make the next
+    #as new node and new node's previous link as this current node.
+    if temp.next is None:
+        n.prev = temp
+        temp.next=  n
+        
+    else:    
+        #storing the next node to current node in link part(next) of new node.
+        n.next = temp.next
+        
+        #storing new node in link part(next) of current node.
+        temp.next = n
+        
+        #storing the new node in previous link part(prev) of the node which 
+        #was next to current node initially.
+        temp.next.prev = n
+        
+        #store the current node in previous link part(prev) of new node.
+        n.prev = temp
+
+
+################## ▼ geeks for geeks Solution ▼ ##################
+# Doubly Linked List | Set 1 (Introduction and Insertion)
+# https://www.geeksforgeeks.org/doubly-linked-list/
+
 def insertAfter(self, prev_node, new_data):
 
     # 1. check if the given prev_node is NULL
@@ -61,11 +98,9 @@ def insertAfter(self, prev_node, new_data):
     if new_node.next is not None:
         new_node.next.prev = new_node
 
-Better solution :
-Doubly Linked List | Set 1 (Introduction and Insertion)
-https://www.geeksforgeeks.org/doubly-linked-list/
-"""
-################### Better solution #########################################
+
+
+
 
 #{
 #  Driver Code Starts

@@ -15,7 +15,7 @@ https://practice.geeksforgeeks.org/problems/circular-linked-list/1/
 # function should return true/false or 1/0
 def isCircular(head):
     # Code here
-    myset = set()
+    myset = set()         #RV: I didn't need to use set()
 
     tmp = head
     while tmp :
@@ -28,15 +28,26 @@ def isCircular(head):
 
     return 0
 
-################### Better solution #########################################
-"""
+##################### ▼ Author's Solution ▼ #####################
+def isCircular(head):
+    # Code here
+    temp = head.next;
+    while(temp!=None and temp!=head):
+        temp=temp.next;
+    return temp==head
+
+
+################## ▼ geeks for geeks Solution ▼ ##################
+# Check if a linked list is Circular Linked List
+# https://www.geeksforgeeks.org/check-if-a-linked-list-is-circular-linked-list/
+
 def Circular(head):
     if head==None:
         return True
          
     # Next of head
-    node = head.next    # I didn't need to gather all nodes. 
-    i = 0               # If one node is same that means it's circular Linked List. 
+    node = head.next    #RV: I didn't need to gather all nodes. 
+    i = 0               #RV: If one node is same that means it's circular Linked List. 
      
     # This loop would stop in both cases (1) If Circular (2) Not circular
     while((node is not None) and (node is not head)):  
@@ -45,11 +56,9 @@ def Circular(head):
      
     return(node==head)
 
-Better solution :
-Check if a linked list is Circular Linked List
-https://www.geeksforgeeks.org/check-if-a-linked-list-is-circular-linked-list/
-"""
-################### Better solution #########################################
+
+
+
 
 #{
 #  Driver Code Starts

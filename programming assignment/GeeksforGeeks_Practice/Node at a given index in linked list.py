@@ -4,7 +4,8 @@ https://practice.geeksforgeeks.org/problems/node-at-a-given-index-in-linked-list
 
 2022/04/09
 """
-"""index is the node which is to be displayed in output
+"""
+index is the node which is to be displayed in output
   Node is defined as
 class Node:
     def __init__(self, data):
@@ -29,6 +30,11 @@ def getNth(head, k):
         temp = temp.next
 
     return temp.data
+
+################## ▼ geeks for geeks Solution ▼ ##################
+# Write a function to get Nth node in a Linked List
+# https://www.geeksforgeeks.org/write-a-function-to-get-nth-node-in-a-linked-list/
+
 
 
 # {
