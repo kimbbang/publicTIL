@@ -1,20 +1,24 @@
-## Cloud
+# Cloud
 
 
 
 
 ---
-### Service models
+## Service models
 
 
-Infrastructure as a service (IaaS)  
+### Infrastructure as a service (IaaS)  
 
-CRM, Email, games..; Amazon EC2
+CPU, 메모리, 저장장치 등 하드웨어 
 
-Platform as a service (PaaS)  
-web server, database.. ; Microsoft Azure
 
-Software as a service (SaaS)  
+
+### Platform as a service (PaaS)  
+
+OS, 미들웨어, web server, database.. ; Microsoft Azure
+
+### Software as a service (SaaS)  
+
 Virtual machines, storage, load balancers, network, server.. ; Dropbox
 
 
