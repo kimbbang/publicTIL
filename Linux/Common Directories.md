@@ -56,6 +56,7 @@ once the computer is restarted, the contents of this folder are **cleared out**
 is similar to how **RAM** on a computer works
 
 
+---
 
 ## /var
 
@@ -69,6 +70,35 @@ tryhackme@linux2:/$ ls /var
 backups  crash  local  log   opt  snap   tmp
 cache    lib    lock   mail  run  spool  www
 ```
+
+### /var/log
+fail2ban.log : is used to monitor attempted brute forces
+ufw.log : is used as a firewall
+
+```
+ryhackme@linux3:/var/log$ ls
+alternatives.log    btmp.1                 dmesg.3.gz  lastlog
+alternatives.log.1  cloud-init-output.log  dmesg.4.gz  private
+amazon              cloud-init.log         dpkg.log    syslog
+apache2             dist-upgrade           dpkg.log.1  syslog.1
+apt                 dmesg                  journal     unattended-upgrades
+auth.log            dmesg.0                kern.log    wtmp
+auth.log.1          dmesg.1.gz             kern.log.1
+btmp                dmesg.2.gz             landscape
+tryhackme@linux3:/var/log$ 
+```
+
+### /var/log/apache2
+apache2 : Apache2 web server
+```
+tryhackme@linux3:/var/log/apache2$ ls
+access.log  access.log.1  error.log  error.log.1  other_vhosts_access.log
+
+tryhackme@linux3:/var/log/apache2$ cat access.log.1
+10.9.232.111 - - [04/May/2021:18:18:16 +0000] "GET /catsanddogs.jpg HTTP/1.1" 200 51395 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36"
+```
+
+
 ---
 참고 자료   
 [TryHackMe - Linux Fundamentals](https://tryhackme.com/module/linux-fundamentals)
