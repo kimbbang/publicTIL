@@ -17,8 +17,7 @@ https://practice.geeksforgeeks.org/problems/find-nk-th-node-in-linked-list/1
 
 def fractionalNodes(head,k):
     #add code here
-
-    stack = []
+    stack = []    #RV: I didn't need a list
 
     tmp = head
     while tmp :
@@ -30,13 +29,32 @@ def fractionalNodes(head,k):
 
     return stack[index]
 
-################### Better solution #########################################
-"""
-Better solution :
-Find the fractional (or n/k – th) node in linked list
-https://www.geeksforgeeks.org/find-fractional-nk-th-node-linked-list/
-"""
-################### Better solution #########################################
+##################### ▼ Author's Solution ▼ #####################
+
+def fractionalNodes(head,k):
+        if(k<=0 or head is None):
+            return None
+        fractionalNodes=None          #RV: store just one ! 
+        temp=head
+        i=0
+        while(temp is not None):
+            temp=temp.next
+            if(i%k==0):
+                if(fractionalNodes is None):
+                    fractionalNodes=head
+                else:
+                    fractionalNodes=fractionalNodes.next
+            i=i+1
+        return fractionalNodes
+
+
+################## ▼ geeks for geeks Solution ▼ ##################
+# Find the fractional (or n/k – th) node in linked list
+# https://www.geeksforgeeks.org/find-fractional-nk-th-node-linked-list/
+
+
+
+
 
 
 #{

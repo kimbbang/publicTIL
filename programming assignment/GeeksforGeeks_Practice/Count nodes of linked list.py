@@ -30,6 +30,30 @@ class Solution:
 
         return result
 
+ ##################### ▼ Author's Solution ▼ #####################
+   
+    #Function to count nodes of a linked list.
+    def getCount(self, head_node):
+        
+        #using a pointer for the linked list.
+        curr_node=head_node
+        count=0
+        
+        #using a loop to count nodes until we get null in link part of node.
+        while curr_node:
+            
+            #updating counter.
+            count+=1
+            #updating pointer to the next node.
+            curr_node=curr_node.next
+            
+        #returning the number of nodes.
+        return count
+
+
+
+
+
 
 # {
 #  Driver Code Starts
