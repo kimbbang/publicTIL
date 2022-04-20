@@ -39,9 +39,37 @@ def getNthFromLast(head, n):
 
     return tmp.data
 
+##################### ▼ Author's Solution ▼ #####################
 
-################### Better solution #########################################
-"""
+def getNthFromLast(head,n):
+    
+    #using two pointers, similar to finding middle element.
+    curr_node = head
+    nth_node = head
+
+    #traversing first n elements with first pointer.
+    while n :
+        if n and curr_node == None:
+            return -1
+        curr_node = curr_node.next
+        n-=1
+
+    #now traversing with both pointers and when first pointer gives null 
+    #we have got the nth node from end in second pointer since the first 
+    #pointer had already traversed n nodes and thus had difference of n 
+    #nodes with second pointer.
+    while curr_node :
+        curr_node = curr_node.next
+        nth_node = nth_node.next
+
+    #returning the data of nth node from end.
+    return nth_node.data
+    
+
+################## ▼ geeks for geeks Solution ▼ ##################
+# Program for n’th node from the end of a Linked List
+# https://www.geeksforgeeks.org/nth-node-from-the-end-of-a-linked-list/
+
 def getNthFromLast(head,n):
     # Getting count of linked list
     data = []
@@ -65,11 +93,8 @@ def getNthFromLast(head,n):
     else:
         return -1
 
-Better solution :
-Program for n’th node from the end of a Linked List
-https://www.geeksforgeeks.org/nth-node-from-the-end-of-a-linked-list/
-"""
-################### Better solution #########################################
+
+
 
 
 # {

@@ -40,7 +40,7 @@ class Solution:
 """
 def compareCLL(self, head1,head2):
     #code here
-    n1 = getLength(head1)          # 문제가 제공하는 함수가 어떤게 있는지 잘 확인하고 활용하자 ! 
+    n1 = getLength(head1)          #RV: 문제가 제공하는 함수가 어떤게 있는지 잘 확인하고 활용하자 ! 
     n2 = getLength(head2)
     if (n1!=n2):
         return False

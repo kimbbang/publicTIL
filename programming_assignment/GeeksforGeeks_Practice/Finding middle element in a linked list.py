@@ -22,7 +22,7 @@ class Solution:
         if head.next == None:
             return head.data
 
-        tempList = []
+        tempList = []        #RV: I didn't need a list
 
         tmp = head
         while tmp.next:
@@ -31,6 +31,27 @@ class Solution:
         tempList.append(tmp.data)
 
         return tempList[len(tempList) // 2]
+
+##################### ▼ Author's Solution ▼ #####################
+
+    def findMid(self, head):
+        if head is None:
+            return None
+    
+        ptr1 = head
+        ptr2 = head
+        while(ptr2 is not None and ptr2.next is not None):
+            ptr1 = ptr1.next
+            # this pointer moves 1 nodes ahead everytime loop is run
+        
+            ptr2 = ptr2.next.next
+            # this pointer moves 2 nodes ahead everytime loop is run
+        
+        return ptr1.data                 #RV: HERE ! 
+        # since slow was moving with half speed, it is there at halfway point
+
+
+
 
 ################### Better solution #########################################
 """

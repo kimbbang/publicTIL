@@ -39,15 +39,37 @@ def removeDuplicates(head):
 
     return result
 
-################### Better solution #########################################
-"""
+##################### ▼ Author's Solution ▼ #####################
+
+def removeDuplicates(head):
+    
+    #using a pointer to iterate over linked list.
+    curr_node=head
+    
+    #traversing through the linked list.
+    while curr_node.next:
+        
+        #if data at current node and next node are same, we store the node 
+        #next to the next node of current node in link of current node.
+        if(curr_node.data == curr_node.next.data):
+            curr_node.next = curr_node.next.next
+            
+        #else we just move the pointer to next node.
+        else:
+            curr_node=curr_node.next
+            
+
+################## ▼ geeks for geeks Solution ▼ ##################
+# Remove duplicates from a sorted linked list
+# https://www.geeksforgeeks.org/remove-duplicates-from-a-sorted-linked-list/
+
 def removeDuplicates(self):
     temp = self.head
     if temp is None:
         return
     while temp.next is not None:
         if temp.data == temp.next.data:
-            new = temp.next.next            # JUST Link NEXT NEXT !! 
+            new = temp.next.next            #RV: JUST Link NEXT NEXT !! 
             temp.next = None
             temp.next = new
         else:
@@ -55,11 +77,8 @@ def removeDuplicates(self):
     return self.head
 
 
-Better solution :
-Remove duplicates from a sorted linked list
-https://www.geeksforgeeks.org/remove-duplicates-from-a-sorted-linked-list/
-"""
-################### Better solution #########################################
+
+
 
 #{
 #  Driver Code Starts

@@ -32,23 +32,41 @@ class Solution:
 
         return False
 
-################### Better solution #########################################
-"""
-    def detectLoop(self):
-        slow_p = self.head
-        fast_p = self.head
-        while(slow_p and fast_p and fast_p.next):
-            slow_p = slow_p.next
-            fast_p = fast_p.next.next        # Floyd’s Cycle-Finding Algorithm 
-            if slow_p == fast_p:
-                return 
+##################### ▼ Author's Solution ▼ #####################
+
+    #Function to check if the linked list has a loop.
+    def detectLoop(self, head):
+        
+        #using two pointers and moving one pointer(slow) by one node and 
+        #another pointer(fast) by two nodes in each iteration.
+        slow = head
+        fast = head
+    
+        #using a loop to move the pointers which stops when any of the pointers
+        #or the pointer next to fast becomes null.
+        while slow and fast and fast.next:
+            slow=slow.next
+            fast=fast.next.next    # Floyd’s Cycle-Finding Algorithm 
+            
+            #if both the pointers fast and slow point to same node which 
+            #shows the presence of loop so we return true.
+            if slow == fast :
+                return True
+        
+        #if we reach here it means both the pointers fast and slow never 
+        #point to same node so we return false.
+        return False
 
 
-Better solution :
-Detect loop in a linked list
-https://www.geeksforgeeks.org/detect-loop-in-a-linked-list/
-"""
-################### Better solution #########################################
+
+
+
+################## ▼ geeks for geeks Solution ▼ ##################
+# Detect loop in a linked list
+# https://www.geeksforgeeks.org/detect-loop-in-a-linked-list/
+
+
+
 
 
 #{

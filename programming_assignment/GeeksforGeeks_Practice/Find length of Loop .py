@@ -23,7 +23,7 @@ def countNodesinLoop(head):
     flg = False
     cnt = 0
     start = Node(-1)
-    myset = set()
+    myset = set()     #RV: I didn't need set()
 
     tmp = head
     while tmp:
@@ -45,8 +45,46 @@ def countNodesinLoop(head):
 
     return 0
 
-################### Better solution #########################################
-"""
+##################### ▼ Author's Solution ▼ #####################
+
+#Function to find the length of a loop in the linked list.
+def countNodesinLoop(head):
+    
+    #using two pointers and moving one pointer(slow) by one node and 
+    #another pointer(fast) by two nodes in each iteration.
+    fast = head.next
+    slow = head
+    
+    while fast!=slow:
+        
+        #if the node pointed by first pointer(fast) or the node 
+        #next to it is null, then loop is not present so we return 0.
+        if fast is None or fast.next is None:
+            return 0
+        
+        fast = fast.next.next
+        slow = slow.next
+        
+    #both pointers now point to the same node in the loop.
+    
+    size = 1
+    fast = fast.next
+    
+    #we start iterating the loop with first pointer and continue till 
+    #both pointers point to same node again.
+    while fast!=slow:
+        fast = fast.next
+        #incrementing the counter.
+        size+=1
+        
+    #returning the length of the loop.
+    return size
+    
+
+################## ▼ geeks for geeks Solution ▼ ##################
+# Find length of loop in linked list
+# https://www.geeksforgeeks.org/find-length-of-loop-in-linked-list/
+
 def detectLoop(self):
      
     # if linked list is empty then there is no loop, so return 0
@@ -77,11 +115,8 @@ def detectLoop(self):
     return 0 # No loop
 
 
-Better solution :
-Find length of loop in linked list
-https://www.geeksforgeeks.org/find-length-of-loop-in-linked-list/
-"""
-################### Better solution #########################################
+
+
 
 #{
 #  Driver Code Starts

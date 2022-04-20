@@ -18,8 +18,8 @@ class node:
 def delNode(head, k):
     # Code here
     if k == 1:
-        head = head.next
-        return head
+        head = head.next     #RV: Do NOT store temporary value 
+        return head          #RV: just return !! 
 
     tmp = head
     for i in range(1, k - 1):
@@ -28,6 +28,61 @@ def delNode(head, k):
     nextnode = tmp.next
     tmp.next = nextnode.next
     return head
+
+
+##################### ▼ Author's Solution ▼ #####################
+
+def delNode(head, k):
+    # Code here
+    if k == 1:
+        return head.next
+    temp = head
+    cnt = 1
+    temp2 = head
+    while k != cnt and temp is not None:
+        temp2 = temp
+        temp = temp.next
+        cnt+=1
+    temp2.next = temp.next
+    del temp         #RV: delete value that I don't use anymore
+    return head
+
+
+################## ▼ geeks for geeks Solution ▼ ##################
+# Linked List | Set 3 (Deleting a node)
+# https://www.geeksforgeeks.org/linked-list-set-3-deleting-node/
+
+def deleteNode(self, key):
+         
+        # Store head node
+        temp = self.head
+ 
+        # If head node itself holds the key to be deleted
+        if (temp is not None):
+            if (temp.data == key):
+                self.head = temp.next
+                temp = None
+                return
+ 
+        # Search for the key to be deleted, keep track of the
+        # previous node as we need to change 'prev.next'
+        while(temp is not None):
+            if temp.data == key:
+                break
+            prev = temp
+            temp = temp.next
+ 
+        # if key was not present in linked list
+        if(temp == None):
+            return
+ 
+        # Unlink the node from linked list
+        prev.next = temp.next
+ 
+        temp = None
+
+
+
 
 
 # {

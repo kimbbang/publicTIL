@@ -40,8 +40,39 @@ class Solution:
 
         return new_head
 
-################### Better solution #########################################
-"""
+##################### ▼ Author's Solution ▼ #####################
+
+    def reverseList(self, head):
+        if head is None:
+            return None
+        
+        #taking three pointers to store the current, previous and next nodes.
+        prev = None
+        current = head
+        next = current.next
+        
+        
+        while current is not None:
+            #taking the next node as next.
+            next = current.next 
+            
+            #storing the previous node in link part of current node.
+            current.next = prev 
+            
+            #updating prev from previous node to current node.
+            prev = current
+            
+            #updating current node to next node.
+            current = next           
+        
+        return prev
+
+
+
+################## ▼ geeks for geeks Solution ▼ ##################
+# Reverse a linked list
+# https://www.geeksforgeeks.org/reverse-a-linked-list/
+
     def reverse(self):
         prev = None
         current = self.head
@@ -53,11 +84,9 @@ class Solution:
         self.head = prev
 
 
-Better solution :
-Reverse a linked list
-https://www.geeksforgeeks.org/reverse-a-linked-list/
-"""
-################### Better solution #########################################
+
+
+
 
 # {
 #  Driver Code Starts
