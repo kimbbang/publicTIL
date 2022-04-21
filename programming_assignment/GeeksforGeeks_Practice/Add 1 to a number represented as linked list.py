@@ -5,7 +5,6 @@ Practice Problem :
 Add 1 to a number represented as linked list
 https://practice.geeksforgeeks.org/problems/add-1-to-a-number-represented-as-linked-list/1/
 """
-##################### ▼ Author's Solution ▼ #####################
 '''
 class Node:
     def __init__(self, data):   # data -> value stored in node
@@ -15,7 +14,7 @@ class Node:
 class Solution:
         
     def reverse(self, head):
-        prev = None
+        prev = None         #RV: if prev = head --> circular LL 
         current = head
         next = None
         

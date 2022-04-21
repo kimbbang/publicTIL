@@ -5,9 +5,7 @@ Practice Problem :
 Display Circular Linked List 
 https://practice.geeksforgeeks.org/problems/display-circular-linked-list/1
 """
-##################### ▼ Author's Solution ▼ #####################
 #User function Template for python3
-
 '''
 class Node:
     def __init__(self, data):
