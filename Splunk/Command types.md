@@ -30,5 +30,5 @@ append, bin, dedup, sort
 ---
 ---
 
-### Course
+### References
 [docs.splunk - Command types](https://docs.splunk.com/Documentation/Splunk/8.2.6/SearchReference/Commandsbytype)    

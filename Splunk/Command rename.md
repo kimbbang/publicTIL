@@ -19,10 +19,19 @@ Rename multiple, similarly named fields
 
 ```
 
+### dashboard 축 이름 바꾸기 
+Mon May 10 -> Monday
+```
+| rename _time as Day
+| eval Day = strftime(Day, "%A")
+```
+
+
 
 ---
-
-### References
+---
+### Course
 [Splunk Inc.- Splunk Search Expert 101](https://www.coursera.org/learn/splunk-search-expert-101)  
 
+### References
 [docs.splunk - rename](https://docs.splunk.com/Documentation/Splunk/8.2.5/SearchReference/Rename) 
