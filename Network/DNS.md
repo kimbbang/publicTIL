@@ -20,31 +20,53 @@ for example, the tryhackme.com TLD is .com
 * #### gTLD (Generic Top Level)   
     : tell the user the domain name's purpose
 
-    .com would be for commercial purposes   
-    .org for an organisation   
-    .edu for education  
-    .gov for government
+    **.com** would be for commercial purposes   
+    **.org** for an organisation   
+    **.edu** for education  
+    **.gov** for government
 
 * #### ccTLD (Country Code Top Level Domain)  
     : was used for geographical purposes  
-    .ca for sites based in Canada    
-    .co.uk for sites based in the United Kingdom
+    **.ca** for sites based in Canada    
+    **.co.uk** for sites based in the United Kingdom
 
 [tlds-alpha-by-domain](https://data.iana.org/TLD/tlds-alpha-by-domain.txt)
 
 ### Second-Level Domain
 
-tryhackme.com as an example, tryhackme is the Second Level Domain
+**tryhackme**.com as an example, tryhackme is the Second Level Domain
 
 
 ### Subdomain
 
 A subdomain sits on the left-hand side of the Second-Level Domain using a period to separate it
 
-admin.tryhackme.com the admin part is the subdomain
+**admin**.tryhackme.com the admin part is the subdomain
 
 limited to 63 characters and can only use a-z 0-9 and hyphens
 
+
+---
+
+## What happens when you make a DNS request
+
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20210706213210/DNS2.png">
+
+출처 : [Details on DNS](https://www.geeksforgeeks.org/details-on-dns/)
+
+### ① local device(local cache) >   
+
+### ② Recursive DNS Server >   
+Many Internet Service Providers (ISPs) maintain their own recursive servers,   
+but companies such as Google and OpenDNS also control recursive servers  
+
+### ③ root DNS server + TLD(Top-Level Domain) server >   
+if you were searching for tryhackme.com your request would be redirected to a TLD server that handled .com domains.   
+If you were searching for bbc.co.uk your request would be redirected to a TLD server that handles .co.uk domains  
+
+### ④ authoritative DNS server >>>   
+
+### ② Recursive DNS Server  
 
 ---
 
@@ -109,15 +131,6 @@ TXT records are free text fields where any text-based data can be stored.
 
 ---
 
-## What happens when you make a DNS request
-
-<img src="https://media.geeksforgeeks.org/wp-content/uploads/20210706213210/DNS2.png">
-
-출처 : [Details on DNS](https://www.geeksforgeeks.org/details-on-dns/)
-
-①local device > ②Recursive DNS Server > ③root DNS server > TLD server > ④authoritative DNS server >>> ②Recursive DNS Server
-
-
 ## fields
 
 ### TTL 
@@ -129,8 +142,11 @@ specifies how long a DNS record should be cached for
 
 
 ---
+---
 
+### Course
+[TryHackMe - How The Web Works](https://tryhackme.com/module/how-the-web-works)     
+[TryHackMe - Network Exploitation Basics](https://tryhackme.com/module/intro-to-networking)    
 
 ### References
-[How The Web Works](https://tryhackme.com/module/how-the-web-works)    
 [Details on DNS](https://www.geeksforgeeks.org/details-on-dns/)

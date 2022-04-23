@@ -20,6 +20,8 @@ protocol: HTTP, SMTP, POP3, IMAP4, 보조 - DHCP, DNS
 
 [응용 계층](https://ko.wikipedia.org/wiki/%EC%9D%91%EC%9A%A9_%EA%B3%84%EC%B8%B5)
 
+---
+
 
 ## Transport 
 protocol: TCP, UDP    
@@ -28,12 +30,16 @@ data name : Segments(TCP), datagram(UDP)
 
 [전송 계층](https://ko.wikipedia.org/wiki/%EC%A0%84%EC%86%A1_%EA%B3%84%EC%B8%B5)
 
+---
+
 
 ## Internet   
 protocol: MAIN - IP, 보조 - ICMP, ARP  
 data name : Packets, datagram  
-네트워크 **간** 연결   
+네트워크 **간** 연결 (**traceroute**로 확인)  
 기기: router, layer 3 switch
+
+---
 
 ## Network Interface 
 protocol : Ethernet, LAN, PPP    
@@ -47,7 +53,8 @@ Network Interface층 만은 프로토콜이 달라도 데이터를 주고 받을
 
 
 ---
+---
 
-### References
+### Course
 [TryHackMe - Network Fundamentals](https://tryhackme.com/module/network-fundamentals)  
-
+[TryHackMe -  Network Exploitation Basics](https://tryhackme.com/module/intro-to-networking)
