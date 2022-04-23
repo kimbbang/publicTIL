@@ -43,6 +43,15 @@ Environment variables store information about the operating system environment.
 [Environment variables](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_environment_variables?view=powershell-7.1)   
 
 ---
-참고 자료   
-[TryHackMe - Windows Fundamentals](https://tryhackme.com/module/windows-fundamentals)
 
+### C:\boot.ini
+
+contains the boot options for computers with BIOS firmware
+
+
+---
+---
+
+### Course
+[TryHackMe - Windows Fundamentals](https://tryhackme.com/module/windows-fundamentals)  
+[TryHackMe - Introduction to Web Hacking](https://tryhackme.com/module/intro-to-web-hacking)    

