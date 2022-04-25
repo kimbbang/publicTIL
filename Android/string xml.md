@@ -1,5 +1,9 @@
 # string.xml
 
+hardcoded text WARNING이 뜨는 경우 
+
+---
+
 [developer.android - 문자열 리소스](https://developer.android.com/guide/topics/resources/string-resource#kotlin)
 
 

@@ -1,5 +1,13 @@
 # tools
 
+개발시에 확인할 수 있는 이미지,   
+실제로는 보이지 않는다 
+
+★ ImageView를 넣었는데 이미지가 보이지 않을 때  
+　　: app이 아니라 tools로 설정 되어 있는지 확인 할 것 
+
+---
+
 [developer.android - 도구 속성 참조](https://developer.android.com/studio/write/tool-attributes)
 
 Android 프레임워크에서 모든 View 속성을 android: 대신 tools: 접두어와 함께 사용하여 레이아웃 미리보기에 샘플 데이터를 삽입할 수 있습니다.   

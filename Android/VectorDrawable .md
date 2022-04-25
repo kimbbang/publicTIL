@@ -20,7 +20,7 @@ VectorDrawable은 XML 파일에서 연관된 색상 정보와 함께 점, 선, �
             vectorDrawables.useSupportLibrary = true
         }
     ```
-2. 레이아웃에 xmlns:app="http://schemas.android.com/apk/res-auto" 추가하기 
+2. 레이아웃에 ```xmlns:app="http://schemas.android.com/apk/res-auto"``` 추가하기 
     ```
     <?xml version="1.0" encoding="utf-8"?>
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
