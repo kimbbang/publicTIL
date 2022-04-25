@@ -11,10 +11,21 @@
 8→9 : UsvVyFSfZZWbi6wgC7dAFyFuR6jQQUhR  
 9→10 : truKLdjsbJ5g7yyJ2X2R0o3a5HQJFuLk  
 10→11 : IFukwKGsFW8MOq3IRFqrxE1hxTNEbUPR  
+11→12 : 5Te8Y4drgCRfCx8ugdwuEX8KFC6k2EUu  
+12→13 : 8ZjyCRiBWFYkneahHwxCv3wb2a1ORpYL  
+13→14 :  
+14→15 :  
+15→16 :  
+16→17 :  
+17→18 :  
+18→19 :  
+19→20 :  
+20→21 :  
+
 
 TODO  
-Bandit Level 11 → Level 12  
-https://overthewire.org/wargames/bandit/bandit12.html
+Bandit Level 13 → Level 14  
+https://overthewire.org/wargames/bandit/bandit14.html
 
 
 

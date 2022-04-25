@@ -1,33 +1,7 @@
-## cat	
-Outputting the Contents of a File (cat)
-
 
 ## cp
 copy	Copy a file or folder   
 
-
-## echo	
-Output any text that we provide
-```
-tryhackme@linux1:~$ echo "Hello Friend!"
-Hello Friend!
-
-tryhackme@linux1:~$ echo Hello
-Hello
-
-$ echo "'Hello world'"
-'Hello world'
-
-$ echo '"Hello world"'
-"Hello world"
-```
-
-## file	
-file	Determine the type of a file   
-```
-tryhackme@linux2:~$ file note
-note: ASCII text
-```
 ## mkdir
 make directory	Create a folder   
 
