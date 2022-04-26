@@ -31,8 +31,15 @@ root@ip-10-10-25-144:~#
 ```
 
 ## gobuster
+
+directory discovery tool  
+GoBuster is a tool used to brute-force URIs (directories and files), DNS subdomains and virtual host names. 
+
 ```
 root@ip-10-10-25-144:~# gobuster dir --url http://10.10.211.134/ -w /usr/share/wordlists/SecLists/Discovery/Web-Content/common.txt
+    OR 
+root@ip-10-10-25-144:~# gobuster dir -u http://10.10.211.134/ -w /usr/share/wordlists/SecLists/Discovery/Web-Content/common.txt
+
 ===============================================================
 Gobuster v3.0.1
 by OJ Reeves (@TheColonial) & Christian Mehlmauer (@_FireFart_)
