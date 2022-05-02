@@ -55,12 +55,17 @@ FIELDALIAS-<class> = <orig_field_name> AS <new_field_name>
 EXTRACT-extract_ip = (?<ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})
 FIELDALIAS-extract_ip = ip AS ipaddress
 ```
+---
 
-
-
+## field EXTRACT
+```
+# The following stanza extracts an ip address from _raw
+[my_sourcetype]
+EXTRACT-extract_ip = (?<ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})
+```
 ---
 ---
 
 ### Course
-[Splunk Inc.- Splunk Knowledge Manager 101](https://www.coursera.org/learn/splunk-knowledge-manager-101)      
-
+[Splunk Inc.- Splunk Knowledge Manager 101](https://www.coursera.org/learn/splunk-knowledge-manager-101)    
+[Splunk Inc.- Splunk Knowledge Manager 102](https://www.coursera.org/learn/splunk-knowledge-manager-102)    
