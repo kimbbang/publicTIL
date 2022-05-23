@@ -27,15 +27,25 @@ if __name__ == "__main__":
 #} Driver Code Ends
 
 ##################### ▼ Author's Solution ▼ #####################
-# Python3 code to swap using XOR
 x = 10
 y = 5
 
-# Code to swap 'x' and 'y'
+# Solution1
+# This code is contributed by Sumit Sudhakar
+x = x + y   # x now becomes 15
+y = x - y   # y becomes 10
+x = x - y   # x becomes 5
+
+# Solution2
+# This code is contributed by @ajit
+x = x * y   # x now becomes 50
+y = x // y  # y becomes 10
+x = x // y  # x becomes 5
+
+# Solution3
+# This code is contributed by Sumit Sudhakar
 x = x ^ y; # x now becomes 15 (1111)
 y = x ^ y; # y becomes 10 (1010)
 x = x ^ y; # x becomes 5 (0101)
 
 print ("After Swapping: x = ", x, " y =", y)
-# This code is contributed by
-# Sumit Sudhakar
